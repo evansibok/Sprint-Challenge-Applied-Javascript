@@ -11,14 +11,18 @@
 function getLambdaTimesInfo(){
     axios.get("https://lambda-times-backend.herokuapp.com/topics")
     .then(timesInfo => {
-        // debugger
-        console.log(timesInfo.data);
+        debugger
+        console.log(timesInfo.data.topics)
     })
     .catch(error => {
-        // debugger
+        debugger
         error
     })
 }
+
+getLambdaTimesInfo()
+
+
 
 
 function Tab(){
@@ -28,3 +32,4 @@ function Tab(){
 }
 
 Tab()
+
