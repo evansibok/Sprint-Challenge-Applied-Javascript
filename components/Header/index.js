@@ -10,8 +10,10 @@
 // And add it to the DOM in the .headerContainer component
 
 function Header() {
-    let div = document.createElement("div");
-    div.classList.add("header")
+    // debugger
+
+    let headerDiv = document.createElement("div");
+    headerDiv.classList.add("header")
 
     let span1 = document.createElement("span");
     span1.classList.add("date")
@@ -22,11 +24,13 @@ function Header() {
     let span2 = document.createElement("span");
     span2.classList.add("temp")
 
-    div.appendChild(span1);
-    div.appendChild(h1);
-    div.appendChild(span2);
+    headerDiv.appendChild(span1);
+    headerDiv.appendChild(h1);
+    headerDiv.appendChild(span2);
 
-    let headerContainer = document.querySelector(".headerContainer");
-    headerContainer.appendChild(div);
+    let headerCon = document.querySelector(".header-container");
+    headerCon.appendChild(headerDiv);
 
 }
+
+Header()
