@@ -8,11 +8,13 @@
 //  The tab component should look like this:
 //    <div class="tab">topic here</div>
 
-function getLambdaTimesInfo(){
+function getLambdaTabsInfo(){
     axios.get("https://lambda-times-backend.herokuapp.com/topics")
     .then(timesInfo => {
         debugger
-        console.log(timesInfo.data.topics)
+        timesInfo.data.topics.forEach(ele => {
+            document.querySelector(".topics").appendChild(Tab(ele))
+        })
     })
     .catch(error => {
         debugger
@@ -20,16 +22,16 @@ function getLambdaTimesInfo(){
     })
 }
 
-getLambdaTimesInfo()
+getLambdaTabsInfo()
 
 
+function Tab(result){
+    // debugger
 
-
-function Tab(){
     let tabDiv = document.createElement("div");
     tabDiv.classList.add("tab")
-    tabDiv.textContent = "topic here";
+    tabDiv.textContent = result;
+    return tabDiv;
 }
 
-Tab()
 
