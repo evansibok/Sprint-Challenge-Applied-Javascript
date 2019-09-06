@@ -29,7 +29,7 @@ Demonstrate your understanding of this week's concepts by answering the followin
 Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager
 
 1. What is the DOM?
-* Ans: The DOM provides us a representation/interface of our HTML document as an object with the ability interact with it.
+* Ans: The DOM provides us a representation/interface of our HTML document as an object with the ability to interact with it.
 
 2. What is an event?
 * Ans: When a user interacts with a page an event has been performed. These events enable certain actions to be taken on the page elements.
