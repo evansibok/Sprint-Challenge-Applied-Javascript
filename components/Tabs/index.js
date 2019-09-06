@@ -11,13 +11,13 @@
 function getLambdaTabsInfo(){
     axios.get("https://lambda-times-backend.herokuapp.com/topics")
     .then(timesInfo => {
-        debugger
+        // debugger
         timesInfo.data.topics.forEach(ele => {
             document.querySelector(".topics").appendChild(Tab(ele))
         })
     })
     .catch(error => {
-        debugger
+        // debugger
         error
     })
 }

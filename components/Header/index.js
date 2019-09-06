@@ -17,12 +17,14 @@ function Header() {
 
     let span1 = document.createElement("span");
     span1.classList.add("date")
+    span1.textContent = "SMARCH 28, 2019";
 
     let h1 = document.createElement("h1");
     h1.textContent = "Lambda Times";
 
     let span2 = document.createElement("span");
     span2.classList.add("temp")
+    span2.textContent = "98°";
 
     headerDiv.appendChild(span1);
     headerDiv.appendChild(h1);
@@ -31,6 +33,7 @@ function Header() {
     let headerCon = document.querySelector(".header-container");
     headerCon.appendChild(headerDiv);
 
+    return headerDiv;
 }
 
 Header()

@@ -22,7 +22,8 @@ function getLambdaTimesInfo(){
     axios.get('https://lambda-times-backend.herokuapp.com/articles')
     .then(timesInfo => {
         // debugger
-        timesInfo.data.articles
+        timesInfo.data.articles //.map(ele => {
+            // document.querySelector(".cards-container").appendChild(articles(ele))})
     })
     .catch(error => {
         // debugger
@@ -32,15 +33,15 @@ function getLambdaTimesInfo(){
 
 getLambdaTimesInfo()
 
-function articles(info) {
-    // debugger
+function articles() {
+    debugger
 
     let cardDiv = document.createElement("div");
     cardDiv.classList.add("card")
 
     let headlineDiv = document.createElement("div");
     headlineDiv.classList.add("headline")
-    headlineDiv.textContent = info.headline;
+    headlineDiv.textContent = headline;
 
     let authorDiv = document.createElement("div");
     authorDiv.classList.add("author")
@@ -49,10 +50,10 @@ function articles(info) {
     imgDiv.classList.add("img-container");
 
     let img = document.createElement("img");
-    img.setAttribute = ("src", info.authorPhoto);
+    img.setAttribute = ("src", authorPhoto);
 
     let authorNameSpan = document.createElement("span");
-    authorNameSpan.textContent = "By " + info.authorName;
+    authorNameSpan.textContent = "By " + authorName;
 
     imgDiv.appendChild(img);
     authorDiv.appendChild(imgDiv);
@@ -60,8 +61,7 @@ function articles(info) {
     cardDiv.appendChild(headlineDiv)
     cardDiv.appendChild(authorDiv)
 
-    return info;
+    return cardDiv;
 }
 
-console.log(articles(getLambdaTimesInfo))
-
+articles()
