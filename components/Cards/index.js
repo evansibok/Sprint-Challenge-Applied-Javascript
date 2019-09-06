@@ -24,12 +24,12 @@ function getLambdaTimesInfo(){
         // debugger
         const articles = Object.values(timesInfo.data.articles);
         
-        articles.forEach(ele => {
+        articles.forEach(topics => {
             // debugger
-            ele.forEach(e => {
+            topics.forEach(element => {
                 // debugger
-                console.log(e)
-                const singleArticles = articleCard(e)
+                console.log(element)
+                const singleArticles = articleCard(element)
                 cardCon.appendChild(singleArticles);
             })
         });
@@ -127,6 +127,16 @@ const cardCon = document.querySelector(".cards-container");
 // for (var topics in articles) {
 //     articlesArray.push(articles[topics]);
 // }
+
+// articlesArr.forEach(ele => {
+//     // debugger
+//     console.log(ele)
+//     ele.forEach(e => {
+//         // debugger
+//         console.log(e.authorName)
+//     })
+// });
+
 // console.log(articlesArr);
 
 // object.object...[object1, object1...]
