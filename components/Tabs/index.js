@@ -13,7 +13,7 @@ function getLambdaTabsInfo(){
     .then(timesInfo => {
         // debugger
         timesInfo.data.topics.forEach(ele => {
-            document.querySelector(".topics").appendChild(Tab(ele))
+            document.querySelector(".topics").appendChild(Tab(ele));
         })
     })
     .catch(error => {
@@ -33,5 +33,3 @@ function Tab(result){
     tabDiv.textContent = result;
     return tabDiv;
 }
-
-
