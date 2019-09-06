@@ -18,13 +18,19 @@
   </div>
 */
 
+const topBar = document.querySelector(".top-bar");
+
 function slideAnimate() {
 
   document.querySelectorAll("img").forEach(ele => {
-    ele.style.display = "inline-block";
-    ele.style.animationName = "slidein";
+    ele.style.display = "unset";
+    ele.style.maxWidth = "auto";
+    ele.style.maxHeight = "auto"
     ele.style.animationDuration = "3";
-
+    ele.style.animationName = "slidein";
+    ele.style.zIndex = Number(-1);
+    
+    
     return ele;
   })
 
@@ -55,18 +61,19 @@ function carouselComponent() {
   leftButtonDiv.textContent = "<";
   rightButtonDiv.textContent = ">";
 
-
-
   carouselDiv.appendChild(leftButtonDiv)
   carouselDiv.appendChild(img1)
   carouselDiv.appendChild(img2)
   carouselDiv.appendChild(img3)
   carouselDiv.appendChild(img4)
   carouselDiv.appendChild(rightButtonDiv)
-  document.querySelector(".carousel-container").appendChild(carouselDiv)
+  let carouselCon = document.querySelector(".carousel-container")
+  carouselCon.appendChild(carouselDiv)
 
   leftButtonDiv.addEventListener('click', slideAnimate);
   rightButtonDiv.addEventListener('click', slideAnimate);
+
+  topBar.style.zIndex = 1;
 
   return carouselDiv;
 
