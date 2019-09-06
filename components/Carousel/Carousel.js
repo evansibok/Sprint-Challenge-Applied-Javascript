@@ -18,9 +18,23 @@
   </div>
 */
 
+function slideAnimate() {
+
+  document.querySelectorAll("img").forEach(ele => {
+    ele.style.display = "inline-block";
+    ele.style.animationName = "slidein";
+    ele.style.animationDuration = "3";
+
+    return ele;
+  })
+
+}
+
+
+
 function carouselComponent() {
 
-  debugger
+  // debugger
 
   const carouselDiv = document.createElement("div");
   const leftButtonDiv = document.createElement("div");
@@ -30,13 +44,13 @@ function carouselComponent() {
   const img3 = document.createElement("img");
   const img4 = document.createElement("img");
 
-  carouselDiv.classList.add("carousel"); 
+  carouselDiv.classList.add("carousel");
   leftButtonDiv.classList.add("left-button");
   rightButtonDiv.classList.add("right-button");
   img1.setAttribute("src", "./assets/carousel/mountains.jpeg")
   img2.setAttribute("src", "./assets/carousel/computer.jpeg")
   img3.setAttribute("src", "./assets/carousel/trees.jpeg")
-  img3.setAttribute("src", "./assets/carousel/turntable.jpeg")
+  img4.setAttribute("src", "./assets/carousel/turntable.jpeg")
 
   leftButtonDiv.textContent = "<";
   rightButtonDiv.textContent = ">";
@@ -50,21 +64,12 @@ function carouselComponent() {
   carouselDiv.appendChild(img4)
   carouselDiv.appendChild(rightButtonDiv)
   document.querySelector(".carousel-container").appendChild(carouselDiv)
-  
 
-    // function slideAnimate(action) {
-
-    //   document.querySelectorAll("img").forEach(ele => {
-
-    //   })
-
-    // }
-
-    // leftButtonDiv.addEventListener('click', )
-    // rightButtonDiv.addEventListener('click', )
+  leftButtonDiv.addEventListener('click', slideAnimate);
+  rightButtonDiv.addEventListener('click', slideAnimate);
 
   return carouselDiv;
-  
+
 }
 
 carouselComponent()
