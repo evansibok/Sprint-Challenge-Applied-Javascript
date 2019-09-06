@@ -28,13 +28,17 @@ function slideAnimate() {
     ele.style.maxHeight = "auto"
     ele.style.animationDuration = "3";
     ele.style.animationName = "slidein";
+    ele.style.animationIterationCount = "infinite";
     ele.style.zIndex = Number(-1);
+    ele.style.maxWidth = auto;
     
     
     return ele;
   })
 
 }
+
+
 
 
 
@@ -80,3 +84,5 @@ function carouselComponent() {
 }
 
 carouselComponent()
+
+slideAnimate()
