@@ -22,16 +22,18 @@ function getLambdaTimesInfo(){
     axios.get('https://lambda-times-backend.herokuapp.com/articles')
     .then(timesInfo => {
         // debugger
-        const articlesArr = Object.values(timesInfo.data.articles);
-        // articlesArr.forEach(ele => {
-        //     // debugger
-        //     console.log(ele)
-        //     ele.forEach(e => {
-        //         // debugger
-        //         console.log(e.authorName)
-        //     })
-        // });
-        // console.log(articlesArray);
+        const articles = Object.values(timesInfo.data.articles);
+        
+        articles.forEach(ele => {
+            // debugger
+            ele.forEach(e => {
+                // debugger
+                console.log(e)
+                const singleArticles = articleCard(articles)
+                cardCon.appendChild(singleArticles);
+            })
+        });
+        console.log(topicsArray);
     })
     .catch(error => {
         // debugger
@@ -41,7 +43,7 @@ function getLambdaTimesInfo(){
 
 getLambdaTimesInfo()
 
-function articleCard() {
+function articleCard(news) {
     // debugger
 
     let cardDiv = document.createElement("div");
@@ -49,7 +51,7 @@ function articleCard() {
 
     let headlineDiv = document.createElement("div");
     headlineDiv.classList.add("headline")
-    headlineDiv.textContent = "MongoDB: NoSQL vs. SQL, the Debate Continues..";
+    headlineDiv.textContent = news.headline;
     
     let authorDiv = document.createElement("div");
     authorDiv.classList.add("author")
@@ -58,10 +60,10 @@ function articleCard() {
     imgDiv.classList.add("img-container");
 
     let img = document.createElement("img");
-    img.setAttribute("src", "./assets/bones.jpg");
+    img.setAttribute("src", news.authorPhoto);
 
     let authorNameSpan = document.createElement("span");
-    authorNameSpan.textContent = "By BONES R. LIFE";
+    authorNameSpan.textContent = `By ${news.authorName}`;
 
 
     imgDiv.appendChild(img);
@@ -73,13 +75,7 @@ function articleCard() {
     return cardDiv;
 }
 
-articleCard()
-
-const singleArticles = articleCard()
-
 const cardCon = document.querySelector(".cards-container");
-cardCon.appendChild(singleArticles);
-
 
 
 
@@ -111,8 +107,21 @@ cardCon.appendChild(singleArticles);
 //     ]
 // }
 
+// TEST SOLUTION 1
+// const articlesArr = Object.values(articles);
 
-// TEST SOLUTION 
+// articlesArr.forEach(ele => {
+//     // debugger
+//     console.log(ele)
+//     ele.forEach(e => {
+//         // debugger
+//         console.log(e.authorName)
+//     })
+// });
+// console.log(articlesArray);
+
+
+// TEST SOLUTION 2
 // Typically for...in returns the same result as Object.values() of an object
 // var articlesArray = [];
 
