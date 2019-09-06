@@ -17,3 +17,54 @@
     <div class="right-button"> > </div>
   </div>
 */
+
+function carouselComponent() {
+
+  debugger
+
+  const carouselDiv = document.createElement("div");
+  const leftButtonDiv = document.createElement("div");
+  const rightButtonDiv = document.createElement("div");
+  const img1 = document.createElement("img");
+  const img2 = document.createElement("img");
+  const img3 = document.createElement("img");
+  const img4 = document.createElement("img");
+
+  carouselDiv.classList.add("carousel"); 
+  leftButtonDiv.classList.add("left-button");
+  rightButtonDiv.classList.add("right-button");
+  img1.setAttribute("src", "./assets/carousel/mountains.jpeg")
+  img2.setAttribute("src", "./assets/carousel/computer.jpeg")
+  img3.setAttribute("src", "./assets/carousel/trees.jpeg")
+  img3.setAttribute("src", "./assets/carousel/turntable.jpeg")
+
+  leftButtonDiv.textContent = "<";
+  rightButtonDiv.textContent = ">";
+
+
+
+  carouselDiv.appendChild(leftButtonDiv)
+  carouselDiv.appendChild(img1)
+  carouselDiv.appendChild(img2)
+  carouselDiv.appendChild(img3)
+  carouselDiv.appendChild(img4)
+  carouselDiv.appendChild(rightButtonDiv)
+  document.querySelector(".carousel-container").appendChild(carouselDiv)
+  
+
+    // function slideAnimate(action) {
+
+    //   document.querySelectorAll("img").forEach(ele => {
+
+    //   })
+
+    // }
+
+    // leftButtonDiv.addEventListener('click', )
+    // rightButtonDiv.addEventListener('click', )
+
+  return carouselDiv;
+  
+}
+
+carouselComponent()
