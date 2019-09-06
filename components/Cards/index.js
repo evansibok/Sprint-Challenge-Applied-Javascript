@@ -29,11 +29,10 @@ function getLambdaTimesInfo(){
             ele.forEach(e => {
                 // debugger
                 console.log(e)
-                const singleArticles = articleCard(articles)
+                const singleArticles = articleCard(e)
                 cardCon.appendChild(singleArticles);
             })
         });
-        console.log(topicsArray);
     })
     .catch(error => {
         // debugger
