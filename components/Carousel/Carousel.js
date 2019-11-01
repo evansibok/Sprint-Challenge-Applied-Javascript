@@ -29,7 +29,7 @@ function slideAnimate() {
   carouselImage.forEach(ele => {
     ele.setAttribute(
       "style", 
-      "max-width: 100%; max-height: 100%; z-index: 1; display: unset; animation-duration: 3; animation-name: slidein; animation-iteration-count: infinite"
+      "max-width: 100%; height: auto; z-index: -1; display: block; animation-duration: 3; animation-name: slidein; animation-iteration-count: infinite"
     );
     console.log(ele)
 
