@@ -21,23 +21,17 @@
 function getLambdaTimesInfo(){
     axios.get('https://lambda-times-backend.herokuapp.com/articles')
     .then(timesInfo => {
-        // debugger
         const articles = Object.values(timesInfo.data.articles);
         
         articles.forEach(topics => {
-            // debugger
             topics.forEach(element => {
-                // debugger
                 console.log(element)
                 const singleArticles = articleCard(element)
                 cardCon.appendChild(singleArticles);
             })
         });
     })
-    .catch(error => {
-        // debugger
-        error
-    })
+    .catch(error => error)
 }
 
 getLambdaTimesInfo()
