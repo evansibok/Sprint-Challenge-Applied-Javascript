@@ -18,10 +18,12 @@
   </div>
 */
 
+// Carousel Function
 const topBar = document.querySelector(".top-bar");
 
 function slideAnimate() {
 
+  // Transition not working
   document.querySelectorAll("img").forEach(ele => {
     ele.style.display = "unset";
     ele.style.maxWidth = "auto";
@@ -32,10 +34,8 @@ function slideAnimate() {
     ele.style.zIndex = Number(-1);
     ele.style.maxWidth = auto;
     
-    
     return ele;
   })
-
 }
 
 
@@ -74,8 +74,8 @@ function carouselComponent() {
   let carouselCon = document.querySelector(".carousel-container")
   carouselCon.appendChild(carouselDiv)
 
-  leftButtonDiv.addEventListener('click', slideAnimate);
-  rightButtonDiv.addEventListener('click', slideAnimate);
+  leftButtonDiv.addEventListener('click', slideAnimate());
+  rightButtonDiv.addEventListener('click', slideAnimate());
 
   topBar.style.zIndex = 1;
 
@@ -84,5 +84,3 @@ function carouselComponent() {
 }
 
 carouselComponent()
-
-slideAnimate()
