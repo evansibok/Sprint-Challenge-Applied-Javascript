@@ -43,24 +43,22 @@ function slideAnimate() {
 
 
 function carouselComponent() {
-
-  // debugger
-
+  
   const carouselDiv = document.createElement("div");
   const leftButtonDiv = document.createElement("div");
   const rightButtonDiv = document.createElement("div");
-  const img1 = document.createElement("img");
-  const img2 = document.createElement("img");
-  const img3 = document.createElement("img");
-  const img4 = document.createElement("img");
+  const firstImage = document.createElement("img");
+  const secondImage = document.createElement("img");
+  const thirdImage = document.createElement("img");
+  const fourthImage = document.createElement("img");
 
   carouselDiv.classList.add("carousel");
   leftButtonDiv.classList.add("left-button");
   rightButtonDiv.classList.add("right-button");
-  img1.setAttribute("src", "./assets/carousel/mountains.jpeg")
-  img2.setAttribute("src", "./assets/carousel/computer.jpeg")
-  img3.setAttribute("src", "./assets/carousel/trees.jpeg")
-  img4.setAttribute("src", "./assets/carousel/turntable.jpeg")
+  firstImage.setAttribute("src", "./assets/carousel/mountains.jpeg")
+  secondImage.setAttribute("src", "./assets/carousel/computer.jpeg")
+  thirdImage.setAttribute("src", "./assets/carousel/trees.jpeg")
+  fourthImage.setAttribute("src", "./assets/carousel/turntable.jpeg")
 
   leftButtonDiv.textContent = "<";
   rightButtonDiv.textContent = ">";
