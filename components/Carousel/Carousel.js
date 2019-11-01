@@ -23,17 +23,16 @@ const topBar = document.querySelector(".top-bar");
 
 function slideAnimate() {
 
+  const carouselImage = document.querySelectorAll("img");
+
   // Transition not working
-  document.querySelectorAll("img").forEach(ele => {
-    ele.style.display = "unset";
-    ele.style.maxWidth = "auto";
-    ele.style.maxHeight = "auto"
-    ele.style.animationDuration = "3";
-    ele.style.animationName = "slidein";
-    ele.style.animationIterationCount = "infinite";
-    ele.style.zIndex = Number(-1);
-    ele.style.maxWidth = auto;
-    
+  carouselImage.forEach(ele => {
+    ele.setAttribute(
+      "style", 
+      "max-width: 100%; max-height: 100%; z-index: 1; display: unset; animation-duration: 3; animation-name: slidein; animation-iteration-count: infinite"
+    );
+    console.log(ele)
+
     return ele;
   })
 }
@@ -43,7 +42,7 @@ function slideAnimate() {
 
 
 function carouselComponent() {
-  
+
   const carouselDiv = document.createElement("div");
   const leftButtonDiv = document.createElement("div");
   const rightButtonDiv = document.createElement("div");
@@ -64,10 +63,10 @@ function carouselComponent() {
   rightButtonDiv.textContent = ">";
 
   carouselDiv.appendChild(leftButtonDiv)
-  carouselDiv.appendChild(img1)
-  carouselDiv.appendChild(img2)
-  carouselDiv.appendChild(img3)
-  carouselDiv.appendChild(img4)
+  carouselDiv.appendChild(firstImage)
+  carouselDiv.appendChild(secondImage)
+  carouselDiv.appendChild(thirdImage)
+  carouselDiv.appendChild(fourthImage)
   carouselDiv.appendChild(rightButtonDiv)
   let carouselCon = document.querySelector(".carousel-container")
   carouselCon.appendChild(carouselDiv)
